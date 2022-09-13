@@ -1,0 +1,59 @@
+# HomeServiceRobo
+
+Home service robot is a fully autonomous robot used to navigate to goal positions given by programming.
+It mainly focuses on the decision making aspects of mobile robotics such as navigation and path planning.
+In this project, we are using ros kinetic version
+
+There are few significant packages used in this project to make robot autonomous. They are 
+    Gmapping
+    turtlebot_teleop package
+    turtlebot_rviz_launchers
+    turtlebot_gazebo
+
+Gmapping :: Gmapping is a mapping package which is used to map the environment using the laser range finder sensor. 
+It provides a ros node called slam_gmapping, which is used to generate 2D occupancy grid map.
+This package is used to transform the incoming laser scan data into the odometry data
+In this project, the subscribed topics are tf/, scan/, and map/. tf/ is known for transforms which are necessary to relate
+the frames for laser, odometry and base. map/ is for generating the map.
+
+Turtlebot_rviz_launchers is the package used to visualize the robots performance in the envronment.
+Using this, we can load preconfigured rviz workspaces.
+
+Turtlebot_gazebo is a package with which we deploy a turtlebot robot in the gazebo environment. In this project, I'm using turtlebot robot 
+in a custom made environment built by me in gazebo.
+
+In this, we are using shell scripts to make launching all files easy. To run all the scripts in one launch file, I used an application called xterminal
+Navigste to the scripts folder and there you can find few launch files such as 
+    add_marker.sh
+    pick_objects.sh
+    test_navigation.sh
+    test_slam.sh
+   
+In add_markers.sh file, there are few commands used to launch our turtlebot in the custom made environment, amcl_demo launch file from turtlebot_gazebo package,
+and add_markers node to add the virtual objects to the environment.
+
+In pick_objects.sh file, it is the same as add_markers.sh except the add_markers.cpp node, which is replaced with pic_objects.cpp node. This node navigates
+to the goal positions to pick the virtual objects created by the add_markers.cpp node
+    
+The main file in the scripts directory is the home_service.sh file, In this we are launching all the nodes, they are turtlebot, amcl, add_markers and the pick_objects.
+combining all the launch files, add_markers.cpp node will communicate with the pick_objects.cpp node to get the robot poses form the environment and thus by 
+calculating the distance using robot poses and marker poses, we can perform the logic and tasks.
+
+Firstly go to the catkin workspace(catkin_ws) 
+
+$cd /home/workspace/catkin_ws
+
+then source the environment by the following command
+
+$source /devel/setup.bash
+$catkin_make
+
+Next, launch the home_service.sh file by navigating into the folder 
+
+$cd src/scripts
+$./home_service.sh
+    
+
+
+
+
