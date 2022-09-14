@@ -495,6 +495,18 @@ tf2_ros_DIR:PATH=/opt/ros/kinetic/share/tf2_ros/cmake
 tf_DIR:PATH=/opt/ros/kinetic/share/tf/cmake
 
 //Value Computed by CMake
+timed_markers_BINARY_DIR:STATIC=/home/workspace/catkin_ws/build/add_markers
+
+//Value Computed by CMake
+timed_markers_SOURCE_DIR:STATIC=/home/workspace/catkin_ws/src/add_markers
+
+//Value Computed by CMake
+timed_marksers_BINARY_DIR:STATIC=/home/workspace/catkin_ws/build/add_markers
+
+//Value Computed by CMake
+timed_marksers_SOURCE_DIR:STATIC=/home/workspace/catkin_ws/src/add_markers
+
+//Value Computed by CMake
 turtlebot_BINARY_DIR:STATIC=/home/workspace/catkin_ws/build/turtlebot/turtlebot
 
 //Value Computed by CMake

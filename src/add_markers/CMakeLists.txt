@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(add_markers)
 
+
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 
@@ -206,3 +207,6 @@ include_directories(
 
 add_executable(add_markers src/add_markers.cpp)
 target_link_libraries(add_markers ${catkin_LIBRARIES})
+
+add_executable(timed_markers src/timed_markers.cpp)
+target_link_libraries(timed_markers ${catkin_LIBRARIES})

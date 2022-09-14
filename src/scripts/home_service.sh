@@ -16,4 +16,6 @@ sleep 3
 xterm -e "cd /home/workspace/catkin_ws;source devel/setup.bash; rosrun add_markers add_markers" &
 sleep 3
 xterm -e "cd /home/workspace/catkin_ws;source devel/setup.bash; rosrun pick_objects pick_objects"
-
+&
+sleep 2
+#xterm -e "cd /home/workspace/catkin_ws;source devel/setup.bash;rosrun add_markers timed_markers"
